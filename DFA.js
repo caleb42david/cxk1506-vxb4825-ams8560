@@ -10,7 +10,7 @@ var Qstates     = [];
 var Qzero       = null;
 // Accept States
 var FStates     = [];
-
+//asdfasdf
 // input
 
 // step state information
