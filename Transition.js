@@ -6,9 +6,6 @@
 function Transition(_beginState, _endState){
 	// Vars
 	this.character = lastKeyCode;	// Transitions 'Key'
-	isEpsilon = false; //temp
-	
-	this.epsilon = isEpsilon; //true only if this transition is an epsilon transition.
 	
 	this.midX = (_beginState.x + _endState.x)/2;	// Midpoint of transition
 	this.midY = (_beginState.y + _endState.y)/2;	// Used in drawing calculations
@@ -89,7 +86,7 @@ function transitionDisplay(){
 			this.entX = this.x;
 			this.entY = this.startState.y-this.startState.radius-10;
 		}
-		else if (!this.epsilon){
+		else{
 			ctx.fillText(this.character,this.startState.x,this.startState.y-this.startState.radius-10-textoffset);
 		}
 	}	
@@ -127,11 +124,8 @@ function drawArrow( diffX, diffY ){
 	if( Turing ){
 		arrowLabel = (this.character + "," + this.writeCharacter + "," + this.tapeShift);
 	}
-	else if(!this.epsilon){
-		arrowLabel = this.character;
-	}
 	else{
-		arrowLabel = '\u03B5';
+		arrowLabel = this.character;
 	}
 	
 	if(this.endState.x < this.startState.x){ // end point is to the left of the start point
