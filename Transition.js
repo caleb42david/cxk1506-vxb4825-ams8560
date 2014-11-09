@@ -54,6 +54,7 @@ function transitionDisplay(){
 	}
 	
 	// Denote that this is selected transition by color change
+	// When you are trying to edit the transition VB
 	if( this == selectedTran ){
 		ctx.fillStyle="blue";
 		if( !Turing ){
