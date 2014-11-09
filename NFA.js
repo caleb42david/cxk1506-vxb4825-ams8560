@@ -1,6 +1,6 @@
 /**
  * File: NFA.js
- * Authors: Val Booth <vxb4825@>, Caleb Kofahl <cxk1506@rit.edu>, Aaron Stadler <ams8560@rit.edu>
+ * Authors: Val Booth <vxb4825@rit.edu>, Caleb Kofahl <cxk1506@rit.edu>, Aaron Stadler <ams8560@rit.edu>
  */
 
 // ---------- VARS -----------
