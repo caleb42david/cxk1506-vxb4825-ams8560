@@ -24,3 +24,7 @@ function changeSelectedStateLabel(){
 		}
 	}
 }
+
+function setEpsilon(){
+	lastKeyCode = "\u30B5";
+}
