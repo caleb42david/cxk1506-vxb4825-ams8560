@@ -26,5 +26,5 @@ function changeSelectedStateLabel(){
 }
 
 function setEpsilon(){
-	lastKeyCode = "\u30B5";
+	lastKeyCode = '\u03B5';
 }
