@@ -5,20 +5,17 @@
 // ---------- VARS -----------
 var Turing = false;
 // List of states
-var Qstates     = [][];
+var Qstates     = [];
 // Start State
 var Qzero       = null;
 // Accept States
-var FStates1     = [];
-var FStates2     = [][];
+var FStates     = [];
 
 // input
 
 // step state information
-var currentState1;
-var currentState2;
-var prevState1;
-var prevState2;
+var currentState;
+var prevState;
 
 
 var boxInput = "";
@@ -31,31 +28,27 @@ var alerts = true; // this boolean will turn on and off alerts because the annoy
 function step(s,newInput){
 	
 	// get next state from currentState with next character
-	nextState1 = getNextState( currentState1, inputList[s] );
-	nextState2 = getNextState( currentState2, inputList[s] );
-	if( nextState1 == null ){
+	nextState = getNextState( currentState, inputList[s] );
+	if( nextState == null ){
 		alert("Failure, no transition found");
 		if(newInput){setAcceptedForInput(AcceptedForInput.NOTACCEPTED);}
 		return AcceptedForInput.NOTACCEPTED;
 	}
 	
 	// reset states
-	prevState1 = currentState1;
-	prevState2 = currentState2;
-	currentState1 = nextState1;
-	currentState2 = nextState2;
-	nextState1 = null;
-	nextState2 = null;
+	prevState = currentState;
+	currentState = nextState;
+	nextState = null;
 }
 
 function isAccepted(input,newInput){
 	// if machine ends in accept state
-	if( $.inArray(currentState1, FStates1) != -1 && $.inArray(currentState2, FStates2[currentState1]) != -1){
-		alert("Machine completed in accept state (" + currentState1.label + ", " + currentState2.label ") for string " + input);
+	if( $.inArray(currentState, FStates) != -1 ){
+		alert("Machine completed in accept state " + currentState.label + " for string " + input);
 		if(newInput){setAcceptedForInput(AcceptedForInput.ACCEPTED);}
 		return AcceptedForInput.ACCEPTED;
 	}
-	alert("Not accepted, \n finished  in state (" + currentState1.label + ", " + currentState2.label ") for string " + input);
+	alert("Not accepted, \n finished  in state " + currentState.label + " for string " + input);
 	if(newInput){setAcceptedForInput(AcceptedForInput.NOTACCEPTED);}
 	return AcceptedForInput.NOTACCEPTED;
 }
