@@ -14,8 +14,8 @@ var FStates     = [];
 // input
 
 // step state information
-var currentState;
-var prevState;
+var currentState = [];
+var prevState = [];
 
 
 var boxInput = "";
