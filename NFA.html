@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<link rel="icon" type="image/ico" href="Malv Icons/malvicon.ico"></link>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+	<div id="banner">
+		<a href="index.html">
+			<img src="Malv Icons/MaLV.png" alt="malv logo" height="50">
+		</a>
+		
+		<h1>Nondeterministic Finite Automaton </h1>
+	</div>
+
+<div id="buttons">	
+	  
+	<input type="button"  value="Debug Input" onclick="debugInput()">
+	<input type="button"  value="Check Input" onclick="checkInput()">
+	<input type="button" value ="Check All Previous Input" onclick="checkAllPreviousInput()">
+	<input type="button" value ="Clear All Previous Input" onclick="clearInputCanvas()">
+	<input type="button" value ="Save" onclick="saveAsFile()">
+	<input type="button" value ="Load" onclick="loadFromCookie()">
+	<input type="button" value="Display String" onclick="showString()" />
+	<input type="button" value="Load from String" onclick="loadString()" />
+
+	<br></br>
+		
+	<div id="stringTextWrapper">
+		<textarea id="stringText"></textarea>	
+	</div>
+	<br></br>
+	
+	<input type="image" id="play_btn" src="Images/play_btn.png"  
+	onmouseover="this.src='Images/play_btn.png'" 
+	onmouseout="this.src='Images/play_btn.png'"
+	onclick="debugInput()"/>
+	
+	<input type="image" id="check_btn" src="Images/check_btn.png"  
+	onmouseover="this.src='Images/check_btn.png'" 
+	onmouseout="this.src='Images/check_btn.png'"
+	onclick="checkInput()"/>
+
+	<input type="image" id="state_btn" src="Images/state_btn.png"  
+	onmouseover="this.src='Images/state_btn_hover.png'" 
+	onmouseout="this.src='Images/state_btn.png'"
+	onclick="changePlacement(PlacementMode.STATE)"
+	style="padding-left:200px"/>
+	
+	<input type="image" id="transistion_btn" src="Images/transition_btn.png" 
+	onmouseover="this.src='Images/transition_btn_hover.png'"
+	 onmouseout="this.src='Images/transition_btn.png'"
+	 onclick="changePlacement(PlacementMode.TRANSITION)"/>
+	 
+	 <input type="image" id="start_btn" src="Images/start_btn.png" 
+	onmouseover="this.src='Images/start_btn.png'"
+	 onmouseout="this.src='Images/start_btn.png'"
+	 onclick="setSelectedAsStart()"/>
+	 
+	 <input type="image" id="start_btn" src="Images/accept_btn.png" 
+	onmouseover="this.src='Images/accept_btn.png'"
+	 onmouseout="this.src='Images/accept_btn.png'"
+	 onclick="setSelectedAsAccept()"/>
+	 
+	 <input type="image" id="start_btn" src="Images/clear_btn.png" 
+	onmouseover="this.src='Images/clear_btn.png'"
+	 onmouseout="this.src='Images/clear_btn.png'"
+	 onclick="deleteSelected()"/>
+	 
+	 <input type="image" id="epsilon_btn" src="Images/transition_epsilon_btn.png" 
+	onmouseover="this.src='Images/transition_btn_hover.png'"
+	 onmouseout="this.src='transition_epsilon_btn.png'"
+	 onclick="setEpsilon()"/>
+	 
+	 <br>
+	 <input type="text" name="input" value="" id="input" size="122" style="font-size:12px; padding-left:2px;">
+	 <br>
+	<canvas id="pointer" width="750" height ="25" style="padding-left:2px;"></canvas>
+	
+</div>
+<div id="canvases">
+	<canvas id="fake" width="1200" height ="1"></canvas>
+	<canvas id="machineSpace" width="750" height="500" style="border:1px solid #000000;" color="white"></canvas>
+	<canvas id="inputSpace" width="300" height="500" style="border:1px solid #000000;"></canvas>
+
+</div>
+
+
+</div>
+<script>
+	var c=document.getElementById("machineSpace");
+	var ctx = c.getContext("2d");
+	
+	var inputCanvas=document.getElementById("inputSpace");
+	var ictx = inputCanvas.getContext("2d");
+	
+	var pointerCanvas=document.getElementById("pointer");
+	var pctx = pointerCanvas.getContext("2d");
+	
+	
+</script>
+<!-- comment here -->
+<script src="Draw.js"></script>
+<script src="keyboardInput.js"></script>
+<script src="Vector.js"></script>
+<script src="Transition.js"></script>
+<script src="State.js"></script>
+<script src="Enums.js"></script>
+<script src="inputCanvasBox.js"></script>
+<script src="NFA.js"></script>
+<script src="Update.js"></script>
+<script src="Mouse.js"></script>
+<script src="Files.js"></script>
+
+</body>
+</html> 
