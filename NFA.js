@@ -7,6 +7,7 @@
 var Turing = false;
 // List of states
 var Qstates     = [];
+var EPSILON_VAL = '\u03B5';
 // Start State
 var Qzero       = null;
 // Accept States

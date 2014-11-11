@@ -3,9 +3,9 @@
  */
 
  // Transition Constructor
-function Transition(_beginState, _endState){
+function Transition(_beginState, _endState, _character){
 	// Vars
-	this.character = lastKeyCode;	// Transitions 'Key'
+	this.character = _character;	// Transitions 'Key'
 	
 	this.midX = (_beginState.x + _endState.x)/2;	// Midpoint of transition
 	this.midY = (_beginState.y + _endState.y)/2;	// Used in drawing calculations

@@ -25,7 +25,7 @@ function changeSelectedStateLabel(){
 	}
 }
 
-function setEpsilon(){
-	lastKeyCode = '\u03B5';
-	changePlacement(PlacementMode.TRANSITION);
-}
+// function setEpsilon(){
+// 	lastKeyCode = '\u03B5';
+// 	changePlacement(PlacementMode.TRANSITION);
+// }

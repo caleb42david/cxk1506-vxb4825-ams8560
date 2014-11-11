@@ -29,9 +29,17 @@
 
 	<br></br>
 		
-	<div id="stringTextWrapper">
+	<!-- <div id="stringTextWrapper">
 		<textarea id="stringText"></textarea>	
-	</div>
+	</div> -->
+	<p>
+	How would you like to name your states?
+	</p>
+	<form action="">
+	<input type="radio" name="stateNamingConvention" value="auto" id = "autoStateName" checked = "checked" onclick = "setStateNamingConvention()">Autonumber States
+	<br>
+	<input type="radio" name="stateNamingConvention" value="prompt" id = "promptStateName" onclick = "setStateNamingConvention()">Prompt for State Name
+	</form>
 	<br></br>
 	
 	<input type="image" id="play_btn" src="Images/play_btn.png"  
@@ -76,6 +84,9 @@
 	 onclick="setEpsilon()"/> -->
 	 
 	 <br>
+	 <p>
+	 Please enter a string to be run through the DFA here:
+	</p>
 	 <input type="text" name="input" value="" id="input" size="122" style="font-size:12px; padding-left:2px;">
 	 <br>
 	<canvas id="pointer" width="750" height ="25" style="padding-left:2px;"></canvas>
