@@ -24,6 +24,7 @@ function State( X, Y, id){
 	this.toggleSelect = toggleSelect;
 	this.destroy = StateDestroy;
 }
+
 //----------------------------------
 // ---------- Turing State ---------
 //
@@ -114,6 +115,24 @@ function addTransition( transition ){
 		}
 	}
 	this.tranList.push(transition);	
+}
+
+/**
+ * addNFATransition:
+ * 	Adds transitions for the NFA
+**/
+function addNFATransition( transition ){
+	// hook up end state to transition
+	this.transitions[transition.character] = transition.endState;
+	/*for( var i=0; i<this.tranList.length; i++ ){
+		var T = this.tranList[i];
+		
+		if( T.character == transition.character ){
+			var index = this.tranList.indexOf(T);
+			this.tranList.splice( index, 1 );
+		}
+	}*/
+	this.tranList.push(transition);
 }
 
 function addTuringTransition( transition ){
