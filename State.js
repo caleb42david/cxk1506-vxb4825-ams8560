@@ -34,7 +34,7 @@ function TuringState( X, Y, id){
 	this.transitions = {};
 	this.tranList = new Array();
 	this.id = id;
-	this.label = id;
+	this.label = id;;
 	this.x = X;
 	this.y = Y;
 	this.radius = 20;
