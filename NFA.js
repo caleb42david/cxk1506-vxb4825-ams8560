@@ -43,6 +43,7 @@ function step(s,newInput){
 	nextState = null;
 }
 
+//TODO: Edit to search all branches of the NFA
 function isAccepted(input,newInput){
 	// if machine ends in accept state
 	if( $.inArray(currentState, FStates) != -1 ){

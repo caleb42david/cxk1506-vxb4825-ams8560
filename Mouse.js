@@ -119,7 +119,11 @@ function handleEvent(e){
 		  	 
 		  	  //Regular transition, prompt for transition input
 		  	  else{
-		  	  	transitionChar = prompt("What character would you like to transition on?")
+		  	  	transitionChar = prompt("What character would you like to transition on?");
+		  	  	
+		  	  	while(transitionChar.length != 1){
+		  	  		transitionChar = prompt("You cannot transition on strings. \n Please enter a character to transition on.");
+		  	  	}
 		  	  }
 
 			  makeNewTran(tranStartState, clickedState, transitionChar);
