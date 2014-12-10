@@ -10,7 +10,7 @@ var PlacementMode = {
 	ENDTRANSITION: 		{value: 2},
 	ANCHOR: 			{value: 3},
 	NOTHING:			{value: 4},
-	EPSILON_TRANSITION:  {value: 5}
+	EPSILON_TRANSITION: {value: 5}
 	
 };
 

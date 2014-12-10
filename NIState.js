@@ -16,6 +16,7 @@ function State( X, Y, id){
 	this.selected = false;
 	this.moving = false;
 	this.drawStartArrow = drawStartArrow;
+    this.visited = false;
 
 	// Functions
 	//this.snapTransition = snapTransitionToState;
@@ -104,15 +105,18 @@ function toggleSelect(){
 
 function addTransition( transition ){
 	// hook up end state to transition
-	this.transitions[transition.character] = transition.endState;
 	for( var i=0; i<this.tranList.length; i++ ){
 		var T = this.tranList[i];
-
+		
 		if( T.character == transition.character ){
 			var index = this.tranList.indexOf(T);
-			this.tranList.splice( index, 1 );
+			this.tranList.push(transition);
+            //if the transition already exists make a new one internally that maps to the same end state
+            this.transitions[transition.character+'$'] = transition.endState;
+            return;
 		}
 	}
+	this.transitions[transition.character] = transition.endState;
 	this.tranList.push(transition);	
 }
 
